@@ -4,80 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="pages/index.css">
-  <title>Путешествия по России</title>
+  <title>Mesto</title>
 </head>
 <body class="page">
-  <dialog class="popup">
-    <a href="#" class="popup__icon"></a>
-    <form class="popup__container">
-      <h2 class="popup__title">Редактировать профиль</h2>
-      <input class="popup__name" type="text">
-      <input class="popup__aboutname" type="text">
-      <button class="popup__submitbutton">Сохранить</button>   
-    </form>
-  </dialog>
   <header class="header">
     <img class="header__logo" src="images/logo.svg" alt="Логотип МестоРоссия">
-    <div class="header__line"></div>
   </header>
   <main>
     <section class="profile">
       <img class="profile__avatar" src="images/Avatar.jpg" alt="аватар">
       <div class="profile__info">
-        <h1 class="profile__name">Жак-Ив Кусто <a href="#" class="profile__editbutton"></a></h1>
-        <p class="profile__aboutname">Исследователь океана</p> 
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button class="profile__edit-button" type="button"></button>
+        <p class="profile__about-name">Исследователь океана</p>   
       </div>
-      <a href="#" class="profile__addbutton"></a>
+      <button class="profile__add-button" type="button"></button>
     </section>
     <section>
       <ul class="elements">
-        <li class="elements__element">
-          <img class="elements__maskgroup" src="images/kirill-pershin-Karachaevsk.jpg" alt="Фото Карачаевска">
-          <div class="elements__boxfornamegroup">
-            <h2 class="elements__namegroup">Карачаевск</h2>
-            <a href="#" class="elements__group"></a>
+        <li class="element">
+          <img class="element__mask-group" src="images/kirill-pershin-Karachaevsk.jpg" alt="Фото Карачаевска">
+          <div class="element__box-for-name-group">
+            <h2 class="element__name-group">Карачаевск</h2>
+            <button class="element__group" type="button"></button>
           </div>
         </li>
-        <li class="elements__element">
-          <img class="elements__maskgroup" src="images/kirill-pershin-Elbrus.jpg" alt="Фото горы Эльбрус">
-          <div class="elements__boxfornamegroup">
-            <h2 class="elements__namegroup">Гора Эльбрус</h2>
-            <a href="#" class="elements__group"></a>
+        <li class="element">
+          <img class="element__mask-group" src="images/kirill-pershin-Elbrus.jpg" alt="Фото горы Эльбрус">
+          <div class="element__box-for-name-group">
+            <h2 class="element__name-group">Гора Эльбрус</h2>
+            <button class="element__group" type="button"></button>
           </div>
         </li>
-        <li class="elements__element">
-          <img class="elements__maskgroup" src="images/kirill-pershin-Dombay.jpg" alt="Фото Домбая">
-          <div class="elements__boxfornamegroup">
-            <h2 class="elements__namegroup">Домбай</h2>
-            <a href="#" class="elements__group"></a>
+        <li class="element">
+          <img class="element__mask-group" src="images/kirill-pershin-Dombay.jpg" alt="Фото Домбая">
+          <div class="element__box-for-name-group">
+            <h2 class="element__name-group">Домбай</h2>
+            <button class="element__group" type="button"></button>
           </div>
         </li>
-        <li class="elements__element">
-          <img class="elements__maskgroup" src="images/kirill-pershin-Elbrus.jpg" alt="Фото горы Эльбрус">
-          <div class="elements__boxfornamegroup">
-            <h2 class="elements__namegroup">Гора Эльбрус</h2>
-            <a href="#" class="elements__group"></a>
+        <li class="element">
+          <img class="element__mask-group" src="images/kirill-pershin-Elbrus.jpg" alt="Фото горы Эльбрус">
+          <div class="element__box-for-name-group">
+            <h2 class="element__name-group">Гора Эльбрус</h2>
+            <button class="element__group" type="button"></button>
           </div>
         </li>
-        <li class="elements__element">
-          <img class="elements__maskgroup" src="images/kirill-pershin-Dombay.jpg" alt="Фото Домбая">
-          <div class="elements__boxfornamegroup">
-            <h2 class="elements__namegroup">Домбай</h2>
-            <a href="#" class="elements__group"></a>
+        <li class="element">
+          <img class="element__mask-group" src="images/kirill-pershin-Dombay.jpg" alt="Фото Домбая">
+          <div class="element__box-for-name-group">
+            <h2 class="element__name-group">Домбай</h2>
+            <button class="element__group" type="button"></button>
           </div>
         </li>
-        <li class="elements__element">
-          <img class="elements__maskgroup" src="images/kirill-pershin-Karachaevsk.jpg" alt="Фото Карачаевска">
-          <div class="elements__boxfornamegroup">
-            <h2 class="elements__namegroup">Карачаево-Черкесия</h2>
-            <a href="#" class="elements__group"></a>
+        <li class="element">
+          <img class="element__mask-group" src="images/kirill-pershin-Karachaevsk.jpg" alt="Фото Карачаевска">
+          <div class="element__box-for-name-group">
+            <h2 class="element__name-group">Карачаево-Черкесия</h2>
+            <button class="element__group" type="button"></button>
           </div>
         </li>
       </ul>
     </section>
   </main>
   <footer>
-    <nav class="footer">&copy; 2020 Mesto Russia</nav>
-  </footer>  
+    <p class="footer">&copy; 2020 Mesto Russia</p>
+  </footer> 
+  <dialog class="popup">
+    <button class="popup__icon" type="button"></button>
+    <div class="popup__container">
+      <form name="edit-profile">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input class="popup__put-field" type="text" name="name">
+        <input class="popup__put-field popup__put-field_position_bottom-field" type="text" name="about-name">
+        <button class="popup__submit-button" type="submit">Сохранить</button>  
+      </form> 
+    </div>
+  </dialog>
 </body>
 </html>

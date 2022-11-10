@@ -1,11 +1,16 @@
 .popup__icon {
     width: 32px;
+    background-color: rgba(0, 0, 0, 0);
     background-size: cover;
     background-image: url(../../../images/Closeicon.svg);
+    padding: 0;
+    border: 0;
     padding-top: 32px;
     align-self: flex-end;
     justify-self: flex-end;
     margin-right: -40px;
+    margin-bottom: 8px;
+    cursor: pointer;
 }
 .popup__icon:hover {
     opacity: 0.6;
@@ -13,6 +18,7 @@
 @media screen and (max-width: 767px) {
     .popup__icon {
         margin-right: 0;
+        margin-bottom: 16px;
         width: 20px;
         padding-top: 20px;
     }

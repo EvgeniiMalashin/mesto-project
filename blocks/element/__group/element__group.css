@@ -1,10 +1,13 @@
-.elements__group {
+.element__group {
     min-width: 22px;
     background-size: cover;
     background-image: url(../../../images/like.svg);
+    padding: 0;
+    border: 0;
     padding-top: 19px;
     margin-right: 5px;   
+    cursor: pointer;
 }
-.elements__group:hover {
+.element__group:hover {
     opacity: 0.5;
 }

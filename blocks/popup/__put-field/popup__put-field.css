@@ -1,0 +1,22 @@
+.popup__put-field {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 54px 36px 0;
+    min-width: 358px;
+    padding: 0;
+    line-height: 17px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.popup__put-field:focus {
+    outline: none;
+}
+@media screen and (max-width: 767px) {
+    .popup__put-field {
+        margin: 75px 22px 0;
+        min-width: 238px;
+    }
+}
