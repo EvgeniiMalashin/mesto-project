@@ -1,0 +1,17 @@
+.popup__name {
+    border: none;
+    border-bottom: 1px solid #000;
+    opacity: 0.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 54px auto 0;
+    min-width: 358px;
+    padding: 0;
+}
+@media screen and (max-width: 767px) {
+    .popup__name {
+        margin-top: 75px;
+        min-width: 238px;
+    }
+}

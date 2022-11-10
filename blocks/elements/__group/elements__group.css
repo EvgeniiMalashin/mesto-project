@@ -1,0 +1,10 @@
+.elements__group {
+    min-width: 22px;
+    background-size: cover;
+    background-image: url(../../../images/like.svg);
+    padding-top: 19px;
+    margin-right: 5px;   
+}
+.elements__group:hover {
+    opacity: 0.5;
+}

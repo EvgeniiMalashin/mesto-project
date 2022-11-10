@@ -1,17 +1,7 @@
-# Проект: Место
-
-### Обзор
-
-* Figma
-* Картинки
-
-**Figma**
-
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
-
-**Картинки**
-
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
-
-Удачи!
+Project - "mesto-project"
+https://evgeniimalashin.github.io/mesto-project/
+Этот проект создан Евгением Малашиным как демонстрация усвоенных навыков второго спринта "Работа с макетом, адаптивная вёрстка, интерактивные элементы" на курсе "вебразработчик плюс" от "Яндекс.Практикум".
+В проекте использовались полученные знания по адаптивной разметке страницы, организации файлов по БЭМ, позиционированию элементов, Figma, интерактивных элементов, а также по углубленному ипользованию Bash и GIT.
+https://practicum.yandex.ru/
+This project was created by Evgenii Malashin for demonstration of skills of second sprint "Working with layout maket, adaptive layout, interactive elements" of course "Web developer plus" from "Yandex practicum".
+In project I used knowledge of adaptive web page markup, organizing files by BEM, position of elements, Figma, interactive elements and also in-depth use of Bash and GIT.
