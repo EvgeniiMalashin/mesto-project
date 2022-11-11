@@ -14,6 +14,9 @@
 .popup__put-field:focus {
     outline: none;
 }
+.popup__put-field:last-of-type {
+    margin-top: 30px;
+}
 @media screen and (max-width: 767px) {
     .popup__put-field {
         margin: 75px 22px 0;

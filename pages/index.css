@@ -28,6 +28,5 @@
 @import url(../blocks/popup/__icon/popup__icon.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__put-field/popup__put-field.css);
-@import url(../blocks/popup/__put-field/_position/popup__put-field_position_bottom-field.css);
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
