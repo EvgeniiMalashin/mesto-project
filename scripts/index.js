@@ -54,9 +54,6 @@ popupEditSave.addEventListener('click', function () {
 closePopup(popupEdit);
 })
 
-
-
-
 // реализация добавления, удаления, увеличения карточки
 function createElement(link, name) {
   const elementTemplate = document.querySelector('#element-template').content; 
