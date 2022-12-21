@@ -43,8 +43,6 @@ popupEditClose.addEventListener('click', function () {
 })
 function submitEditProfile(evt) {
   evt.preventDefault(); 
-  nameInput.value;
-  aboutNameInput.value;
   username.textContent = nameInput.value;
   description.textContent = aboutNameInput.value;
   closePopup(popupEdit);
@@ -59,16 +57,16 @@ function createElement(link, name) {
   const elementTemplate = document.querySelector('#element-template').content; 
   const elementsClone = elementTemplate.querySelector('.element').cloneNode(true); 
   const elementsCloneDelete = elementsClone.querySelector('.element__delete');  
-
+  
   elementsClone.querySelector('.element__mask-group').src = link;
   elementsClone.querySelector('.element__mask-group').alt = name;
   elementsClone.querySelector('.element__name-group').textContent = name;
+  
   elementsClone.querySelector('.element__group').addEventListener('click', function (evt) { 
     evt.target.classList.toggle('element__group_active');
   });
   elementsClone.querySelector('.element__mask-group').addEventListener('click', function (evt) {
     viewImage(link, name)
-    evt.target.classList.toggle('.element__mask-group');
   });
   elementsCloneDelete.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -94,11 +92,9 @@ popupAddClose.addEventListener('click', () => {
 function submitCardForm(evt) {
   evt.preventDefault(); 
   cardsList.prepend(createElement(linkInput.value, titleInput.value));
+  closePopup(popupAdd);
 }
 formCardAdd.addEventListener('submit', submitCardForm);
-popupAddCreate.addEventListener('click', () => {
-  closePopup(popupAdd);
-});
 
 // развертывание карточки
 function viewImage(link, name) {
