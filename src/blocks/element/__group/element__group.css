@@ -1,5 +1,6 @@
 .element__group {
     min-width: 22px;
+    background-color: #fff;
     background-size: cover;
     background-image: url(../../../images/like.svg);
     padding: 0;

@@ -1,0 +1,40 @@
+{
+  "name": "mesto-project",
+  "version": "1.0.0",
+  "description": "Ссылка на проект [https://evgeniimalashin.github.io/mesto-project/]\r Этот проект создан Евгением Малашиным как демонстрация усвоенных навыков третьего спринта \"Основы JavaScript: типы, работа с DOM, массивы и функции\" на курсе \"вебразработчик плюс\" от \"Яндекс.Практикум\".\r В проекте использовались полученные знания по адаптивной разметке страницы, организации файлов по БЭМ, позиционированию элементов, Figma, интерактивных элементов, JavaScript, а также по углубленному ипользованию Bash и GIT.\r [https://practicum.yandex.ru/]\r This project was created by Evgenii Malashin for demonstration of skills of third sprint \"JavaScript basics: types, working with DOM, arrays and functions\" of course \"Web developer plus\" from \"Yandex practicum\".\r In project I used knowledge of adaptive web page markup, organizing files by BEM, position of elements, Figma, interactive elements, JavaScript and also in-depth use of Bash and GIT.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgeniiMalashin/mesto-project.git"
+  },
+  "author": "Evgenii Malashin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvgeniiMalashin/mesto-project/issues"
+  },
+  "homepage": "https://github.com/EvgeniiMalashin/mesto-project#readme",
+
+  
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "cssnano": "^5.1.15",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "postcss-loader": "^7.0.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "core-js": "^3.28.0"
+  }
+}

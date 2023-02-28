@@ -1,0 +1,26 @@
+.popup__put-field-error {
+  font-family: "Inter", "Arial", sans-serif;
+  color: #ff0000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  visibility:hidden;
+  overflow-y: hidden;
+  opacity:0;
+  padding-top: 5px;
+  box-sizing: border-box;
+  min-height: 35px;
+  padding-left: 35px;
+  position: fixed;
+  max-width: 400px;
+}
+
+@media screen and (max-width: 767px) {
+  .popup__put-field-error {
+      padding-left: 22px;
+      max-width: 238px;
+      margin-bottom: 22px;
+      position: relative;
+  }
+}

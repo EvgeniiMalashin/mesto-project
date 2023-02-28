@@ -1,0 +1,5 @@
+.popup__put-field-error_active {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
