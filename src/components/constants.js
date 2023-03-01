@@ -29,7 +29,6 @@ const initialCards = [
   // Объявление
 const popupEdit = document.querySelector('#popup-edit');
 const popupEditOpen = document.querySelector('.profile__edit-button');
-const popupEditClose = popupEdit.querySelector('.popup__icon');
 const popupEditSave = popupEdit.querySelector('.popup__submit-button');
 const formEditProfile = popupEdit.querySelector('#edit-profile');
 const nameInput = popupEdit.querySelector('#name');
@@ -39,9 +38,16 @@ const description = document.querySelector('.profile__about-name');
 
 const popupAdd = document.querySelector('#popup-add');
 const popupAddOpen = document.querySelector('.profile__add-button');
-const popupAddClose = popupAdd.querySelector('.popup__icon');
-const popupAddCreate = popupAdd.querySelector('.popup__submit-button');
+
 const cardsList = document.querySelector('.elements');
+
+// универсальный крестик
+const closeButton = document.querySelectorAll('.popup__icon');
+
+//константа из card
+const elementTemplate = document.querySelector('#element-template').content; 
+
+
 
 const titleInput = popupAdd.querySelector('#title');
 const linkInput = popupAdd.querySelector('#link');
@@ -62,6 +68,6 @@ const parametrs = {
   errorClass: 'popup__put-field-error_active'
 };
 
-export {initialCards, popupEdit, popupEditOpen, popupEditClose, popupEditSave, formEditProfile, nameInput, aboutNameInput, username, description, 
-    popupAdd, popupAddOpen, popupAddClose, popupAddCreate, cardsList, titleInput, linkInput, formCardAdd, popupImg, popupImgClose, imgInsert,
-    nameInsert, popups, parametrs};
+export {initialCards, popupEdit, popupEditOpen, popupEditSave, formEditProfile, nameInput, aboutNameInput, username, description, 
+    popupAdd, popupAddOpen, cardsList, titleInput, linkInput, formCardAdd, popupImg, popupImgClose, imgInsert,
+    nameInsert, popups, parametrs, closeButton, elementTemplate };

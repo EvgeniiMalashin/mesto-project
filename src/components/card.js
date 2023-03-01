@@ -1,16 +1,13 @@
 import { openPopup } from "./modal";
-import { popupImg, imgInsert, nameInsert } from "./constants";
+import { popupImg, imgInsert, nameInsert, elementTemplate } from "./constants";
 
 // реализация добавления, удаления, увеличения карточки
 function createElement(link, name) {
-    const elementTemplate = document.querySelector('#element-template').content; 
     const elementsClone = elementTemplate.querySelector('.element').cloneNode(true); 
-    const elementsCloneDelete = elementsClone.querySelector('.element__delete');  
-    
+    const elementsCloneDelete = elementsClone.querySelector('.element__delete');
     elementsClone.querySelector('.element__mask-group').src = link;
     elementsClone.querySelector('.element__mask-group').alt = name;
     elementsClone.querySelector('.element__name-group').textContent = name;
-    
     elementsClone.querySelector('.element__group').addEventListener('click', function (evt) { 
       evt.target.classList.toggle('element__group_active');
     });

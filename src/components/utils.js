@@ -12,6 +12,7 @@ function submitCardForm(evt) {
     evt.preventDefault(); 
     cardsList.prepend(createElement(linkInput.value, titleInput.value));
     closePopup(popupAdd);
+    evt.target.reset();
   }
 
 export {submitCardForm, submitEditProfile}

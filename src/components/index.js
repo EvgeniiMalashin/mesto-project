@@ -1,7 +1,7 @@
 import '../pages/index.css';
-import { initialCards, popupEdit, popupEditOpen, popupEditClose, popupEditSave, formEditProfile, nameInput, aboutNameInput, username, description, 
-  popupAdd, popupAddOpen, popupAddClose, popupAddCreate, cardsList, titleInput, linkInput, formCardAdd, popupImg, popupImgClose, popups, parametrs
-  } from './constants';
+import { initialCards, popupEdit, popupEditOpen, popupEditSave, formEditProfile, nameInput, aboutNameInput, username, description, 
+  popupAdd, popupAddOpen, cardsList, formCardAdd, popupImg, popupImgClose, popups, parametrs,
+  closeButton} from './constants';
 import { openPopup, closePopup } from './modal';
 import { createElement } from './card';
 import { enableValidation } from './validate';
@@ -18,9 +18,14 @@ popupEditOpen.addEventListener('click', function () {
   aboutNameInput.value = description.textContent;
   openPopup(popupEdit);
 })
-popupEditClose.addEventListener('click', function () {
-  closePopup(popupEdit);
-})
+
+// универсальный крестик
+closeButton.forEach((button) => { 
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
+});
+
+
 
 formEditProfile.addEventListener('submit', submitEditProfile);
 popupEditSave.addEventListener('click', function () {
@@ -31,9 +36,7 @@ closePopup(popupEdit);
 popupAddOpen.addEventListener('click', () => {
   openPopup(popupAdd);
 });
-popupAddClose.addEventListener('click', () => {
-  closePopup(popupAdd);
-});
+
 
 //добавление карточки
 
