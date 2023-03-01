@@ -1,7 +1,6 @@
 import '../pages/index.css';
-import { initialCards, popupEdit, popupEditOpen, popupEditSave, formEditProfile, nameInput, aboutNameInput, username, description, 
-  popupAdd, popupAddOpen, cardsList, formCardAdd, popupImg, popupImgClose, popups, parametrs,
-  closeButton} from './constants';
+import { initialCards, popupEdit, popupEditOpen, formEditProfile, nameInput, aboutNameInput, username, description, 
+  popupAdd, popupAddOpen, cardsList, formCardAdd, popups, parametrs, closeButtons} from './constants';
 import { openPopup, closePopup } from './modal';
 import { createElement } from './card';
 import { enableValidation } from './validate';
@@ -17,34 +16,24 @@ popupEditOpen.addEventListener('click', function () {
   nameInput.value = username.textContent;
   aboutNameInput.value = description.textContent;
   openPopup(popupEdit);
-})
+});
 
 // универсальный крестик
-closeButton.forEach((button) => { 
+closeButtons.forEach((button) => { 
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
 
-
-
+//сабмит профиля
 formEditProfile.addEventListener('submit', submitEditProfile);
-popupEditSave.addEventListener('click', function () {
-closePopup(popupEdit);
-});
 
 //открытие и закрытие попапа добавления карточки
 popupAddOpen.addEventListener('click', () => {
   openPopup(popupAdd);
 });
 
-
 //добавление карточки
-
 formCardAdd.addEventListener('submit', submitCardForm);
-
-popupImgClose.addEventListener('click', function () {
-  closePopup(popupImg);
-});
 
 // зарытие по оверлею
 popups.forEach((popup) => {
@@ -55,4 +44,5 @@ popups.forEach((popup) => {
   })
 });
 
+//валидация
 enableValidation(parametrs);

@@ -3,14 +3,14 @@ function showError(formElement, inputElement, errorMessage, options) {
   inputElement.classList.add(options.inputErrorClass)
   errorElement.textContent = errorMessage
   errorElement.classList.add(options.errorClass)
-}
+};
 
 function hideError(formElement, inputElement, options) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`)
   inputElement.classList.remove(options.inputErrorClass)
   errorElement.classList.remove(options.errorClass)
   errorElement.textContent = ''
-}
+};
 
 function isValid(formElement, inputElement, options) {
   if (inputElement.validity.patternMismatch) {
@@ -23,7 +23,7 @@ function isValid(formElement, inputElement, options) {
   } else {
     hideError(formElement, inputElement, options)
   }
-}
+};
 
 function setEventListeners(formElement, options) {
   const inputList = Array.from(formElement.querySelectorAll(options.inputSelector))
@@ -42,13 +42,13 @@ function setEventListeners(formElement, options) {
       switchSubmitButton(inputList, buttonElement, options)
     })
   })
-}
+};
 
 function hasInvalidInput(inputList) {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid
   })
-}
+};
 
 function switchSubmitButton(inputList, buttonElement, options) {
   if (hasInvalidInput(inputList)) {
@@ -58,14 +58,14 @@ function switchSubmitButton(inputList, buttonElement, options) {
     buttonElement.disabled = false
     buttonElement.classList.remove(options.inactiveButtonClass)
   }
-}
+};
 
 function enableValidation(options, form) {
   const formList = Array.from(document.querySelectorAll(options.formSelector))
   formList.forEach((formElement) => {
     setEventListeners(formElement, options)
   })
-}
+};
 
-export{enableValidation}
+export{enableValidation};
 

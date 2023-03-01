@@ -26,35 +26,28 @@ const initialCards = [
     }
   ]; 
 
-  // Объявление
+// Объявление
 const popupEdit = document.querySelector('#popup-edit');
 const popupEditOpen = document.querySelector('.profile__edit-button');
-const popupEditSave = popupEdit.querySelector('.popup__submit-button');
 const formEditProfile = popupEdit.querySelector('#edit-profile');
 const nameInput = popupEdit.querySelector('#name');
 const aboutNameInput = popupEdit.querySelector('#about-name');
 const username = document.querySelector('.profile__name');
 const description = document.querySelector('.profile__about-name');
-
 const popupAdd = document.querySelector('#popup-add');
 const popupAddOpen = document.querySelector('.profile__add-button');
-
 const cardsList = document.querySelector('.elements');
 
-// универсальный крестик
-const closeButton = document.querySelectorAll('.popup__icon');
+// универсальный крестик, All!!
+const closeButtons = document.querySelectorAll('.popup__icon');
 
 //константа из card
 const elementTemplate = document.querySelector('#element-template').content; 
 
-
-
 const titleInput = popupAdd.querySelector('#title');
 const linkInput = popupAdd.querySelector('#link');
 const formCardAdd = popupAdd.querySelector('#add-card');
-
 const popupImg = document.querySelector('#popup-view-img');
-const popupImgClose = popupImg.querySelector('.popup__icon');
 const imgInsert = document.querySelector('.popup__img');
 const nameInsert = document.querySelector('.popup__caption');
 const popups = document.querySelectorAll('.popup');
@@ -68,6 +61,6 @@ const parametrs = {
   errorClass: 'popup__put-field-error_active'
 };
 
-export {initialCards, popupEdit, popupEditOpen, popupEditSave, formEditProfile, nameInput, aboutNameInput, username, description, 
-    popupAdd, popupAddOpen, cardsList, titleInput, linkInput, formCardAdd, popupImg, popupImgClose, imgInsert,
-    nameInsert, popups, parametrs, closeButton, elementTemplate };
+export {initialCards, popupEdit, popupEditOpen, formEditProfile, nameInput, aboutNameInput, username, description, 
+    popupAdd, popupAddOpen, cardsList, titleInput, linkInput, formCardAdd, popupImg, imgInsert,
+    nameInsert, popups, parametrs, closeButtons, elementTemplate };
