@@ -38,7 +38,7 @@ const popupAdd = document.querySelector('#popup-add');
 const popupAddOpen = document.querySelector('.profile__add-button');
 const cardsList = document.querySelector('.elements');
 
-// универсальный крестик, All!!
+// универсальный крестик, All --> 's!!!
 const closeButtons = document.querySelectorAll('.popup__icon');
 
 //константа из card
