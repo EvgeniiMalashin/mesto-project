@@ -1,22 +1,52 @@
 import '../pages/index.css';
-import { initialCards, popupEdit, popupEditOpen, formEditProfile, nameInput, aboutNameInput, username, description, 
-  popupAdd, popupAddOpen, cardsList, formCardAdd, popups, parametrs, closeButtons} from './constants';
-import { openPopup, closePopup } from './modal';
-import { createElement } from './card';
-import { enableValidation } from './validate';
-import { submitCardForm, submitEditProfile } from './utils';
 
-//методом перебора добавляем в разметку стартовые карточки
-initialCards.forEach(item => {
-  cardsList.append(createElement(item.link, item.name));
-});
+import {
+  parametrs,
+  popups, popupEditOpen, popupEdit,
+  popupAddOpen, popupAdd,
+  cardsList, formEditProfile, nameInput,
+  aboutNameInput, username, description,
+  formCardAdd, titleInput,
+  linkInput, popupAvatar, popupAvatarOpen,
+  formAvatarEdit, avatarInput, avatar, userSelf,
+  closeButtons} from './constants.js'
 
-//открытие и закрытие попапа редактирования с исходными или внесенными данными
-popupEditOpen.addEventListener('click', function () {
-  nameInput.value = username.textContent;
-  aboutNameInput.value = description.textContent;
-  openPopup(popupEdit);
-});
+import { enableValidation } from './validate.js'
+
+import { openPopup, closePopup } from './modal.js'
+
+import { submitEditProfile, submitCardForm, editAvatarForm } from './utils.js'
+
+import { createElement } from './card.js'
+
+import { getUserInfo, getStartCards } from './api.js'
+
+
+
+//получили данные с сервера
+Promise.all([getUserInfo(), getStartCards()])
+  .then(([user, cards]) => {
+    username.textContent = user.name;
+    description.textContent = user.about;
+    userSelf.id = user._id;
+    avatar.src = user.avatar;
+    //добавляем в разметку карточки
+    cards.forEach((card) => {
+      cardsList.append(createElement(card, userSelf))
+    });
+  })
+  .catch((err) => {
+    console.log(err); 
+  });
+
+//перебор массива попапов для закрытия по оверлею
+popups.forEach((popup) => {
+  popup.addEventListener('mousedown', (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup(popup)
+    }
+  })
+})
 
 // универсальный крестик
 closeButtons.forEach((button) => { 
@@ -24,25 +54,32 @@ closeButtons.forEach((button) => {
   button.addEventListener('click', () => closePopup(popup));
 });
 
-//сабмит профиля
+//открытие и закрытие попапа редактирования
+popupEditOpen.addEventListener('click', function () {
+  openPopup(popupEdit);
+  nameInput.value = username.textContent;
+  aboutNameInput.value = description.textContent;
+});
 formEditProfile.addEventListener('submit', submitEditProfile);
 
-//открытие и закрытие попапа добавления карточки
+
+
+//открытие и закрытие попапа добавления нового фото
 popupAddOpen.addEventListener('click', () => {
+  titleInput.value = '';
+  linkInput.value = '';
   openPopup(popupAdd);
 });
-
-//добавление карточки
 formCardAdd.addEventListener('submit', submitCardForm);
 
-// зарытие по оверлею
-popups.forEach((popup) => {
-  popup.addEventListener('mousedown', (evt) => {
-    if (evt.target.classList.contains('popup_opened')) {
-      closePopup(popup)
-    }
-  })
+
+
+//открытие попапа редактирования аватарки
+popupAvatarOpen.addEventListener('click', () => {
+  openPopup(popupAvatar);
+  avatarInput.value = avatar.src;
 });
+formAvatarEdit.addEventListener('submit', editAvatarForm);
 
 //валидация
 enableValidation(parametrs);

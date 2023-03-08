@@ -1,0 +1,18 @@
+.profile__avatar-hover {
+    max-width: 100%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: none;
+    background: no-repeat rgba(0, 0, 0, 0.8) center/26px url('../../../images/avatar.svg'); 
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    opacity: 0;
+}
+      
+.profile__avatar-hover:hover {
+    cursor: pointer;
+    opacity: 1;
+}

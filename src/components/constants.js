@@ -1,42 +1,31 @@
-// массив стартовых карточек
-const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-  ]; 
-
-// Объявление
+// попап профиля
 const popupEdit = document.querySelector('#popup-edit');
 const popupEditOpen = document.querySelector('.profile__edit-button');
+const username = popupEdit.querySelector('.profile__name');
+const description = popupEdit.querySelector('.profile__about-name');
 const formEditProfile = popupEdit.querySelector('#edit-profile');
 const nameInput = popupEdit.querySelector('#name');
 const aboutNameInput = popupEdit.querySelector('#about-name');
-const username = document.querySelector('.profile__name');
-const description = document.querySelector('.profile__about-name');
+
+//попап карточки
+
 const popupAdd = document.querySelector('#popup-add');
 const popupAddOpen = document.querySelector('.profile__add-button');
-const cardsList = document.querySelector('.elements');
+const titleInput = popupAdd.querySelector('#title');
+const linkInput = popupAdd.querySelector('#link');
+const formCardAdd = popupAdd.querySelector('#add-card');
+const imgInsert = document.querySelector('.popup__img');
+const nameInsert = document.querySelector('.popup__caption');
+
+
+const cardsList = document.querySelector('.elements'); //для карточек
+
+//попап аватарки
+const avatar = document.querySelector('.profile__avatar');
+const popupAvatar = document.querySelector('#popup-avatar');
+const popupAvatarOpen = document.querySelector('.profile__avatar-hover');
+const avatarInput = popupAvatar.querySelector('#avatar');
+const formAvatarEdit = popupAvatar.querySelector('#avatar-edit');
 
 // универсальный крестик, All --> 's!!!
 const closeButtons = document.querySelectorAll('.popup__icon');
@@ -44,13 +33,11 @@ const closeButtons = document.querySelectorAll('.popup__icon');
 //константа из card
 const elementTemplate = document.querySelector('#element-template').content; 
 
-const titleInput = popupAdd.querySelector('#title');
-const linkInput = popupAdd.querySelector('#link');
-const formCardAdd = popupAdd.querySelector('#add-card');
+
 const popupImg = document.querySelector('#popup-view-img');
-const imgInsert = document.querySelector('.popup__img');
-const nameInsert = document.querySelector('.popup__caption');
 const popups = document.querySelectorAll('.popup');
+const userSelf = document.querySelector('.profile');
+
 
 const parametrs = {
   formSelector: '.popup__container',
@@ -61,6 +48,7 @@ const parametrs = {
   errorClass: 'popup__put-field-error_active'
 };
 
-export {initialCards, popupEdit, popupEditOpen, formEditProfile, nameInput, aboutNameInput, username, description, 
+export { popupEdit, popupEditOpen, formEditProfile, nameInput, aboutNameInput, username, description, 
     popupAdd, popupAddOpen, cardsList, titleInput, linkInput, formCardAdd, popupImg, imgInsert,
-    nameInsert, popups, parametrs, closeButtons, elementTemplate };
+    nameInsert, popups, parametrs, closeButtons, elementTemplate, avatar, popupAvatar, popupAvatarOpen, avatarInput, userSelf, formAvatarEdit, 
+     };
