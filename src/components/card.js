@@ -23,16 +23,18 @@ function createElement(card, user) {
   likeAmout.textContent = card.likes.length; 
   
   card.likes.forEach(() => {
-    if(card.likes._id === user._id){
+    if (card.likes._id === user._id) { 
       like.classList.add('element__group_active');
-    }
+    } 
   })
+
+  
 
   like.addEventListener('click', function (evt) { 
     if (!evt.target.classList.contains('element__group_active')) {
       putLikeCard(card._id)
         .then((data) => {
-          evt.target.classList.toggle('element__group_active')
+          evt.target.classList.add('element__group_active')
           likeAmout.textContent = data.likes.length;
         })
         .catch((err) => {
@@ -49,6 +51,7 @@ function createElement(card, user) {
         });
     }
   })
+  
   elementsClone.querySelector('.element__mask-group').addEventListener('click', function (evt) {
     viewImage(card); 
     evt.target.classList.toggle('.element__mask-group');
@@ -57,6 +60,7 @@ function createElement(card, user) {
   if (user.id !== card.owner._id) {   
     elementsCloneDeleteButton.classList.add('element__delete_nonactive');
   }
+
   elementsCloneDeleteButton.addEventListener('click', (e) => {
     deleteCard(card._id)
       .then(() => {

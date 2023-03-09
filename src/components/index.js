@@ -1,5 +1,4 @@
 import '../pages/index.css';
-
 import {
   parametrs,
   popups, popupEditOpen, popupEdit,
@@ -10,17 +9,11 @@ import {
   linkInput, popupAvatar, popupAvatarOpen,
   formAvatarEdit, avatarInput, avatar, userSelf,
   closeButtons} from './constants.js'
-
 import { enableValidation } from './validate.js'
-
 import { openPopup, closePopup } from './modal.js'
-
 import { submitEditProfile, submitCardForm, editAvatarForm } from './utils.js'
-
 import { createElement } from './card.js'
-
 import { getUserInfo, getStartCards } from './api.js'
-
 
 
 //получили данные с сервера
@@ -30,6 +23,7 @@ Promise.all([getUserInfo(), getStartCards()])
     description.textContent = user.about;
     userSelf.id = user._id;
     avatar.src = user.avatar;
+    
     //добавляем в разметку карточки
     cards.forEach((card) => {
       cardsList.append(createElement(card, userSelf))
@@ -62,8 +56,6 @@ popupEditOpen.addEventListener('click', function () {
 });
 formEditProfile.addEventListener('submit', submitEditProfile);
 
-
-
 //открытие и закрытие попапа добавления нового фото
 popupAddOpen.addEventListener('click', () => {
   titleInput.value = '';
@@ -71,8 +63,6 @@ popupAddOpen.addEventListener('click', () => {
   openPopup(popupAdd);
 });
 formCardAdd.addEventListener('submit', submitCardForm);
-
-
 
 //открытие попапа редактирования аватарки
 popupAvatarOpen.addEventListener('click', () => {

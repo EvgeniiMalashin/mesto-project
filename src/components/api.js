@@ -1,7 +1,9 @@
+
 import { request } from './utils.js'
 
 const config = {
   baseUrl: 'https://nomoreparties.co/v1/plus-cohort-20',
+  
   headers: {
     authorization: 'eba3d929-619d-43d7-bba3-39a73ea3edcb',
     'Content-Type': 'application/json'
@@ -10,7 +12,8 @@ const config = {
 
 
 const getUserInfo = () => {
-  return request(`${config.baseUrl}`, {
+  return request(`${config.baseUrl}/users/me`, {
+    method: 'GET',
     headers: config.headers
   })
 }
@@ -22,7 +25,7 @@ const getStartCards = () => {
 }
 
 const patchEditProfile = (username, description) => {
-  return request('https://nomoreparties.co/v1/plus-cohort-20/cards/users/me', {
+  return request('https://nomoreparties.co/v1/plus-cohort-20/users/me', {
     method: 'PATCH',
     headers: config.headers,
     body: JSON.stringify({

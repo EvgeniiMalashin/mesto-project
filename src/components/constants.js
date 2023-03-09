@@ -1,8 +1,8 @@
 // попап профиля
 const popupEdit = document.querySelector('#popup-edit');
 const popupEditOpen = document.querySelector('.profile__edit-button');
-const username = popupEdit.querySelector('.profile__name');
-const description = popupEdit.querySelector('.profile__about-name');
+const username = document.querySelector('.profile__name');
+const description = document.querySelector('.profile__about-name');
 const formEditProfile = popupEdit.querySelector('#edit-profile');
 const nameInput = popupEdit.querySelector('#name');
 const aboutNameInput = popupEdit.querySelector('#about-name');
