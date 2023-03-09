@@ -83,6 +83,4 @@ function handleSubmit(request, evt, loadingText = "Сохранение...") {
     });
 };
 
-
-
 export {submitCardForm, submitEditProfile, editAvatarForm, request};

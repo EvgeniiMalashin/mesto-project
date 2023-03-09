@@ -10,25 +10,22 @@ function viewImage(card) {
   nameInsert.textContent = card.name;
 };
 
-
 //переписываю функцию c данными
 function createElement(card, user) { 
   const elementsClone = elementTemplate.querySelector('.element').cloneNode(true);
   const elementsCloneDeleteButton = elementsClone.querySelector('.element__delete');
+  const like = elementsClone.querySelector('.element__group');
+  const likeAmout = elementsClone.querySelector('.element__amount-likes');
   elementsClone.querySelector('.element__mask-group').src = card.link;
   elementsClone.querySelector('.element__mask-group').alt = card.name;
   elementsClone.querySelector('.element__name-group').textContent = card.name;
-  const like = elementsClone.querySelector('.element__group');
-  const likeAmout = elementsClone.querySelector('.element__amount-likes');
   likeAmout.textContent = card.likes.length; 
   
-  card.likes.forEach(() => {
-    if (card.likes._id === user._id) { 
+  card.likes.forEach(cardLike => {
+    if (cardLike._id === user.id) { 
       like.classList.add('element__group_active');
     } 
   })
-
-  
 
   like.addEventListener('click', function (evt) { 
     if (!evt.target.classList.contains('element__group_active')) {
@@ -73,7 +70,5 @@ function createElement(card, user) {
   });
   return elementsClone;
 };
-
-
 
 export {createElement};

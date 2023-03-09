@@ -40,7 +40,7 @@ popups.forEach((popup) => {
       closePopup(popup)
     }
   })
-})
+});
 
 // универсальный крестик
 closeButtons.forEach((button) => { 

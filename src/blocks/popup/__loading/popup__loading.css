@@ -1,0 +1,7 @@
+.popup__loading {
+  display: none;
+}
+
+.popup__loading::after {
+  content: "Сохранение...";
+}

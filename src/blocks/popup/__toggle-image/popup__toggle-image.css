@@ -1,0 +1,26 @@
+.popup__toggle-image {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  border: none;
+  left: 437px;
+  bottom: 333px;
+  margin: 0;
+  background: no-repeat center/32px transparent url("../../../images/Close-Icon.png");
+}
+
+.popup__toggle-image:hover {
+  opacity: 0.6;
+  transition: 0.35s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 557px) {
+  .popup__toggle-image {
+    width: 20px;
+    height: 20px;
+    left: 262px;
+    bottom: 300px;
+    background-size: 20px;
+  }
+}
